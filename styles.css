@@ -1,0 +1,268 @@
+css    /* Reset and General */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #0f0f1b;
+  color: #fff;
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #111;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #4caf50;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links a, .nav-links .btn {
+  text-decoration: none;
+  color: #fff;
+  background: transparent;
+  border: none;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.nav-links a:hover, .nav-links .btn:hover {
+  background: #4caf50;
+  color: #fff;
+  border-radius: 5px;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  background-color: #1e1e2f;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.hero .btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+}
+
+canvas#coin-canvas {
+  position: fixed; /* fixed makes it stay as the background even when scrolling */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Behind content, in front of ::before background pattern */
+  pointer-events: none; /* So it doesn't block clicks */
+}
+
+.watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  background-image: url("images/unity_logo_transparent.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  opacity: 0.07;           /* Slightly increased visibility */
+  z-index: 1;              /* <- Brought it in front of background */
+  mix-blend-mode: lighten; /* Optional: enhances appearance on dark bg */
+  pointer-events: none;
+  user-select: none;
+  border: 2px solid red;
+
+}
+
+/* Sections */
+.features, .presale, .whitepaper {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #1b1b2b;
+}
+
+.features {
+  background-image: radial-gradient(#29417c 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #4caf50;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.feature-item {
+  background: #2c2c3c;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+.feature-item h3 {
+  color: #4caf50;
+  margin-bottom: 0.5rem;
+}
+
+/* Buttons */
+.btn {
+  background: #4caf50;
+  color: #fff;
+  padding: 0.7rem 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #388e3c;
+}
+
+.section-btn-container {
+  margin-top: 2rem;
+}
+
+/* Footer */
+.footer {
+  background: #111;
+  padding: 2rem;
+  text-align: center;
+  color: #aaa;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+  background: #222;
+  color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 300px;
+  margin: 10% auto;
+  text-align: center;
+}
+
+.modal-content input {
+  display: block;
+  width: 100%;
+  margin: 1rem 0;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+}
+
+.close {
+  float: right;
+  font-size: 1.5rem;
+  color: #aaa;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #fff;
+}
+
+/* Early Bird Section */
+.earlybird {
+  padding: 4rem 2rem;
+  background-color: #141422;
+  text-align: center;
+}
+
+.earlybird .container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.earlybird h2 {
+  color: #ffd700;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.earlybird p {
+  font-size: 1.2rem;
+  color: #ddd;
+}
+
+/* Floating Early Bird Button */
+.floating-presale-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ffd700;
+  color: #000;
+  padding: 0.75rem 1.2rem;
+  border-radius: 50px;
+  font-weight: bold;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+  text-decoration: none;
+  z-index: 1000;
+  transition: background 0.3s ease;
+}
+
+.floating-presale-btn:hover {
+  background-color: #e6c200;
+  color: #000;
+}
+Add styles.css
