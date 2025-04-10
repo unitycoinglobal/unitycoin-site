@@ -118,5 +118,3 @@ function revealOnScroll() {
 }
 
 window.addEventListener('scroll', revealOnScroll);
-
-Add script.js
